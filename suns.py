@@ -8,7 +8,7 @@ from sklearn import svm
 
 
 nltk.download('stopwords') 
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 
@@ -31,8 +31,19 @@ nltk.download('averaged_perceptron_tagger')
 # response = requests.get("https://most-common-words.herokuapp.com/api")
 # print(response.json())
 
+words = []
+f = open("words.txt", "r")
+while(True):
+	#read next line
+	line = f.readline()
+	#if line is empty, you are done with all lines in the file
+	if not line:
+		break
+	#you can access the line
+	words.append(line.strip())
 
+f.close
 
-
+print(words)
 
 
